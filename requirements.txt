@@ -2,7 +2,7 @@ Flask
 flask_apscheduler
 flask_executor
 pymongo
-dotenv
+python-dotenv
 mechanicalsoup
 pandas
 bcrypt
