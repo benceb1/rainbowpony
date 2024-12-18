@@ -1,7 +1,6 @@
 Flask
 flask_apscheduler
 flask_executor
-bson
 pymongo
 dotenv
 mechanicalsoup
