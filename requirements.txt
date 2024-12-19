@@ -1,7 +1,7 @@
 Flask
-flask_apscheduler
-flask_executor
-pymongo
+Flask-PyMongo
+Flask-Cors
+pymongo[srv]
 python-dotenv
 mechanicalsoup
 pandas
