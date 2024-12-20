@@ -3,6 +3,7 @@ Flask-PyMongo
 Flask-Cors
 pymongo[srv]
 python-dotenv
-mechanicalsoup
+beautifulsoup4
 pandas
 bcrypt
+requests

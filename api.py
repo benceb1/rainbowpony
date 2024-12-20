@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask_cors import CORS
-from index_news_service import get_news, web_scrapper, check_passw
+from index_news_service import get_news, get_index_main_data, check_passw, get_dates
 from extensions import executor, running_tasks
 
 
@@ -15,6 +15,10 @@ def mainpage():
 def get_index_news():
     return get_news()
 
+@mynewsapi.route('/index_dates', methods=['GET'])
+def get_index_list():
+    return get_dates()
+
 
 @mynewsapi.route("/start", methods=["POST"])
 def startproc():
@@ -22,7 +26,7 @@ def startproc():
     if not correct:
         return ">:@"
 
-    task = executor.submit_stored('long_task', web_scrapper)
+    task = executor.submit_stored('long_task', get_index_main_data)
     running_tasks['long_task'] = task
     return jsonify({"message": "Task started", "task_id": "long_task"})
 

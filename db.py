@@ -1,4 +1,4 @@
-from flask import current_app, g
+from flask import current_app, g, Flask
 from flask_pymongo import PyMongo
 
 def get_db():
@@ -12,5 +12,5 @@ def close_db(e=None):
     if db is not None:
         db.cx.close()
 
-def init_app(app):
+def init_app(app: Flask):
     app.teardown_appcontext(close_db)
